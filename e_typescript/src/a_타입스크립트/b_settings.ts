@@ -18,7 +18,7 @@
 // : 윈도우 키 + r
 // > cmd (명령 프롬프트 실행)
 // > node -v
-//   npm -v 
+//   npm -v
 //   "내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다." (재설치 필요!!)
 
 // ? Node.js 설치 전 삭제
@@ -85,7 +85,6 @@
 
 // >>>>> 환경 변수 편집 후에는 컴퓨터 자체 '다시 시작'을 권장 <<<<<
 
-
 //@ 2. npm 확인
 // +) Node.js 설치 시 npm이 자동 설치
 // : npm(node package manager)은 Node.js의 기본 패키지 관리 도구
@@ -94,7 +93,7 @@
 
 // == npm 기본 명령어 ==
 // 1) npm init
-//    : 새로운 Node.js 프로젝트 시작 
+//    : 새로운 Node.js 프로젝트 시작
 //    - 기본값으로 package.json 파일 생성
 //    - 'y'옵션 추가 (npm init -y)
 //      >> 질문 없이 기본값으로 package.json 파일 생성
@@ -119,7 +118,6 @@
 // : 타입스크립트 설치 (npm 사용)
 // > 타입스크립트 사용을 위해서는 로컬 | 전역 환경에 TS 설치가 필수
 
-
 // == 설치 방법 ==
 // git bash 사용 > TS 프로젝트 최상단(e_typescript)
 
@@ -127,6 +125,7 @@
 // - 전역 설치 ('g' 옵션, global)
 //   : 개발자 컴퓨터 전체에 기능 추가
 //   >> npm install -g typescript
+//      npm install -g ts-node typescript (k6_iot_frontend에서)
 
 // - 프로젝트 별 설치 (개발 의존성 설치)
 //   : 현재 사용하고 있는 프로젝트 내에 기능 추가
@@ -145,14 +144,14 @@
 // ? npx
 //   cf) tsc는 TypeScript의 컴파일러
 //       >> npm으로 설치 시 프로젝트 로컬에만 설치
-//       >> npx는 npm이 제공하는 실행 도우미 
-//          : 로컬의 실행 파일을 찾아서 전역 설치 
+//       >> npx는 npm이 제공하는 실행 도우미
+//          : 로컬의 실행 파일을 찾아서 전역 설치
 //            (타입스크립트 전역 설치 완료 시 tsc --init 만 입력해도 가능)
 
 //! tsconfig.json 내부 구조
 // {
 //   "compilerOptions": {
-//     "target": "ES2020",                 //? 변환될 JS 버전  
+//     "target": "ES2020",                 //? 변환될 JS 버전
 //     "module": "CommonJS",               //? Node.js는 CommonJS 모듈 사용
 //     "rootDir": "./src",                 //? TypeScript 원본 코드 폴더
 //     "outDir": "./dist",                 //? 컴파일된 JS 출력 폴더
