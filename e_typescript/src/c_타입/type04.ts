@@ -7,7 +7,7 @@
 // - vertical bar 사용 (|)하여 표현
 
 //? 유니언 타입 사용
-// type UnionType명 = Type1 | Type2 | Type3 ...;
+// type UnionType명 = Type1 | Type2 | Type3... ;
 
 type VariableType = string | number | boolean | string[];
 
@@ -35,8 +35,8 @@ type Admin = {
   department: string; // (회사) 부서
 }
 
-// 위 두가지 타입을 가지는 사이트에서
-// , 타입 별칭이 union 타입인 경우
+// 위 두가지 타입을 가지는 사이트에서 
+// , 타입 별칭이 union타입인 경우
 type AdminUser = Admin | User;
 
 // type AdminUser = {
@@ -51,7 +51,7 @@ type AdminUser = Admin | User;
 let lsa: AdminUser = {
   id: 'qwe123',
   password: 'qwe123123',
-
+  
   // department: '교육부'
   name: '이승아',
   address: '부산진구'
@@ -71,8 +71,8 @@ function getAge(age: Union) {
 
   // +) 유니언 타입의 변수는 포함된 타입에서 모두 포함하는 속성과 메서드만 사용 가능!
   // age.toFixed()
-  // Property 'toFixed' does not exist on type 'Union'.
-  // Property 'toFixed' does not exist on type 'string'.
+  // age.toUpperCase()
+
 
   if (typeof age === 'number') {
     age = age.toFixed();
@@ -85,4 +85,3 @@ function getAge(age: Union) {
 
 console.log(getAge(12.345)); // 12
 console.log(getAge('12 years old')); // 12 YEARS OLD
-

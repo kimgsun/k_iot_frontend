@@ -2,7 +2,7 @@
 
 //! === Intersection 타입 ===
 // : 인터섹션 타입
-// : 여러 타입을  하나로 결합하여 모든 타입의 기능을 갖춘 단일 타입을 생성
+// : 여러 타입을 하나로 결합하여 모든 타입의 기능을 갖춘 단일 타입을 생성
 // - 여러 타입을 모두 만족하는 하나의 타입
 // - And 연산자 (A 그리고 B 그리고 ...)
 // - & 기호를 사용
@@ -16,7 +16,7 @@ type Employee = {
 }
 
 type Manager = Employee & { group: string };
-// Employee 직원이 가진 정보를 재사용하고 Manager가 가진 추가 속성을 지정 가능
+// Employee 직원이 가진 정보를 재사용하고 Manager가 가진 추가 속성 지정 가능
 
 let manager1: Manager = {
   name: '이승아',
@@ -27,7 +27,6 @@ let manager1: Manager = {
 //? 인터섹션 타입의 특징
 // : 타입의 결합
 // - 코드의 재사용성 + 복잡한 타입 조합 가능
-
 type Admin = {
   isAdmin: boolean;
 }
