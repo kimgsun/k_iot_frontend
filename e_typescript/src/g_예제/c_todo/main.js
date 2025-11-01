@@ -13,7 +13,7 @@ var TaskManager = /** @class */ (function () {
         this.tasks.push({
             id: this.nextId,
             task: content,
-            completed: false,
+            completed: false
         });
         this.nextId++;
         this.updateTaskCount(); // 할 일 개수 업데이트
@@ -21,7 +21,7 @@ var TaskManager = /** @class */ (function () {
     //@ 2. 할 일 삭제 (removeTask)
     TaskManager.prototype.removeTask = function (id) {
         this.tasks = this.tasks.filter(function (task) { return task.id !== id; });
-        this.renderTasks("task-list"); // 삭제된 요소가 반영된 랜더링
+        this.renderTasks('task-list'); // 삭제된 요소가 반영된 랜더링
         this.updateTaskCount();
     };
     //@ 3. 할 일 목록 랜더링 (renderTasks)
@@ -29,19 +29,19 @@ var TaskManager = /** @class */ (function () {
     TaskManager.prototype.renderTasks = function (taskListId) {
         var _this = this;
         var taskList = document.getElementById(taskListId);
-        taskList.innerHTML = "";
+        taskList.innerHTML = '';
         this.tasks.forEach(function (task) {
-            var li = document.createElement("li");
+            var li = document.createElement('li');
             li.textContent = "".concat(task.task);
             // 삭제 버튼 생성
-            var deleteButton = document.createElement("button");
-            deleteButton.textContent = "삭제";
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = '삭제';
             deleteButton.onclick = function () {
                 _this.removeTask(task.id);
             };
             // 완료 체크박스 추가
-            var checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
             checkbox.checked = task.completed;
             // 체크 박스 상태 변경 시: checked 속성 변경 시
             checkbox.onchange = function () {
@@ -49,7 +49,7 @@ var TaskManager = /** @class */ (function () {
                 _this.renderTasks(taskListId);
             };
             if (task.completed) {
-                li.style.textDecoration = "line-through";
+                li.style.textDecoration = 'line-through';
             }
             // 생성된 요소를 부모 요소의 제일 마지막에 추가
             li.appendChild(deleteButton);
@@ -63,7 +63,7 @@ var TaskManager = /** @class */ (function () {
     };
     //@ 4. 할 일 개수 업데이트 함수 (updateTaskCount)
     TaskManager.prototype.updateTaskCount = function () {
-        var countElement = document.getElementById("task-count");
+        var countElement = document.getElementById('task-count');
         if (countElement) {
             countElement.textContent = "\uD560 \uC77C \uAC1C\uC218: ".concat(this.tasks.length);
         }
@@ -71,17 +71,17 @@ var TaskManager = /** @class */ (function () {
     return TaskManager;
 }());
 //! TaskManager 객체 생성 (프로젝트 실행)
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
     var taskManager = new TaskManager();
     //? DOM 요소 가져오기
-    var addButton = document.getElementById("add-button");
-    var newTaskInput = document.getElementById("task-input");
-    addButton.addEventListener("click", function () {
-        if (newTaskInput.value.trim() !== "") {
+    var addButton = document.getElementById('add-button');
+    var newTaskInput = document.getElementById('task-input');
+    addButton.addEventListener('click', function () {
+        if (newTaskInput.value.trim() !== '') {
             // 새로운 할 일 생성
             taskManager.addTask(newTaskInput.value);
-            taskManager.renderTasks("task-list");
-            newTaskInput.value = "";
+            taskManager.renderTasks('task-list');
+            newTaskInput.value = '';
         }
     });
 });
