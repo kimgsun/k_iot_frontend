@@ -4,6 +4,6 @@ html, body, #root {
 }
 
 /* 크롬 스크롤바 없애는 방법 */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
