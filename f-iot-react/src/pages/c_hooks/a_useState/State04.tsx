@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 /*
 ! useState를 사용한 상태 관리 & 이벤트 처리
@@ -27,11 +27,11 @@ interface FormData {
 }
 
 const initialFormData: FormData = {
-  id: "",
-  password: "",
-  confirmPassword: "",
-  email: "",
-};
+  id: '',
+  password: '',
+  confirmPassword: '',
+  email: ''
+}
 
 function State04() {
   //^ === Hooks === //
@@ -51,14 +51,14 @@ function State04() {
 
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value
     });
   };
 
-  // 2) 폼 제출 이벤트를 처리하는 이벤트 핸들러
+  // 2) 폼 제출 이벤트를 처리하는 이벤트 핸들러 
   // : 제출 전 각 입력 요소에 대한 유효성 검사
   const handleSignUpSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); 
 
     //? 임시 오류 메시지 객체 생성
     let tempError: FormData = {
@@ -93,7 +93,7 @@ function State04() {
     }
 
     // -- 비밀번호 일치 여부 검사 --
-    if(password && confirmPassword && password != confirmPassword) {
+    if (password && confirmPassword && password != confirmPassword) {
       tempError.confirmPassword = '비밀번호가 일치하지 않습니다.';
       isValid = false;
     }
@@ -101,21 +101,21 @@ function State04() {
     setError(tempError);
 
     if (isValid) {
-      // 모든 유효성 검사 통과 성공
+      // 모든 유효성 검사 통과 성공!
       console.log('회원가입 데이터: ', formData);
       alert(`축하합니다. ${id}님`);
 
       setFormData(initialFormData);
     }
-  };
+  }
 
   return (
     <div
       style={{
-        margin: "20px",
-        padding: "20px",
-        border: "1px solid #ddd",
-        textAlign: "center",
+        margin: '20px',
+        padding: '20px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
       }}
     >
       <h3>회원가입</h3>
@@ -123,60 +123,60 @@ function State04() {
         <div>
           <label>
             아이디
-            <input
-              type="text"
-              name="id"
-              value={formData.id}
+            <input 
+              type="text" 
+              name='id'
+              value={id}
               onChange={handleSignUpInputChange}
             />
           </label>
           {/* error 객체에 해당 속성이 있으면 에러 출력 */}
-          {/*
-            p태그 외부 소괄호 생략
-            : JSX 안에서 한 줄짜리 표현식은 ()소괄호로 안감싸도 됨
+          {/* 
+            p태그 외부 소괄호 생략 가능
+            : JSX 안에서 한 줄짜리 표현식은 ()소괄호로 안 감싸도 됨!
           */}
-          {error.id && <p style={{color: 'red'}}>{error.id}</p>}
+          {error.id && <p style={{ color: 'red' }}>{error.id}</p>}
         </div>
         <div>
           <label>
             비밀번호
-            <input
-              type="text"
-              name="password"
-              value={formData.password}
+            <input 
+              type="text" 
+              name='password'
+              value={password}
               onChange={handleSignUpInputChange}
             />
           </label>
-          {error.password && <p style={{color: 'red'}}>{error.password}</p>}
+          {error.password && <p style={{ color: 'red' }}>{error.password}</p>}
         </div>
         <div>
           <label>
             비밀번호 확인
-            <input
-              type="text"
-              name="confirmPassword"
-              value={formData.confirmPassword}
+            <input 
+              type="text" 
+              name='confirmPassword'
+              value={confirmPassword}
               onChange={handleSignUpInputChange}
             />
           </label>
-          {error.confirmPassword && <p style={{color: 'red'}}>{error.confirmPassword}</p>}
+          {error.confirmPassword && <p style={{ color: 'red' }}>{error.confirmPassword}</p>}
         </div>
         <div>
           <label>
             이메일
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
+            <input 
+              type="email" 
+              name='email'
+              value={email}
               onChange={handleSignUpInputChange}
             />
           </label>
-          {error.email && <p style={{color: 'red'}}>{error.email}</p>}
+          {error.email && <p style={{ color: 'red' }}>{error.email}</p>}
         </div>
-        <button type="submit">회원가입</button>
+        <button type='submit'>회원가입</button>
       </form>
     </div>
-  );
+  )
 }
 
-export default State04;
+export default State04

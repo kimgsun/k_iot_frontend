@@ -25,7 +25,7 @@ function PostCard({ post }: PostCardProps) {
       <p>{post.body}</p>
 
       {/* 2. userId가 1인 경우에만 표시 */}
-      {post.userId === 1 && <small>⭐ 특별 회원의 글 ⭐</small>}
+      {post.userId === 1 && <small>⭐ 특별회원의 글</small>}
 
       {/* 3. 버튼 클릭 시 이벤트 핸들러 연결 */}
       <div>

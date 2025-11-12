@@ -1,9 +1,9 @@
-import React from "react";
-import type { User } from "./State06";
+import React from 'react'
+import type { User } from './State06'
 
 type ChildProps = {
   userData: User | undefined;
-};
+}
 
 function State06_Child({ userData }: ChildProps) {
   return (
@@ -17,7 +17,7 @@ function State06_Child({ userData }: ChildProps) {
       )}
       {/* <p>{userData.name}</p> */}
     </div>
-  );
+  )
 }
 
-export default State06_Child;
+export default State06_Child
