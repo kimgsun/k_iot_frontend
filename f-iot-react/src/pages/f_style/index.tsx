@@ -1,17 +1,32 @@
 import { Fragment, useEffect, useState } from "react";
 import ToggleSection from "@/components/ToggleSection";
-import B_Axios from "./B_Axios";
-import C_ArticlePage from "./C_ArticlePage";
+import A_CSS from "./A_CSS";
+import B_Module from "./B_Module";
+import C_StyleComponents from "./C_StyleComponents";
+import D_Emotion from "./D_Emotion";
+import EmotionPractice from "./emotion-practice/EmotionPractice";
 
 function Index() {
   const sectionsData = [
     {
-      title: "1. Axios",
-      contents: [<B_Axios />],
+      title: "1. 일반 CSS",
+      contents: [<A_CSS />],
     },
     {
-      title: "2. Article(REST API + REACT)",
-      contents: [<C_ArticlePage />],
+      title: "2. Module CSS",
+      contents: [<B_Module />],
+    },
+    {
+      title: "3. Styled Components",
+      contents: [<C_StyleComponents />],
+    },
+    {
+      title: "4. Emotion",
+      contents: [<D_Emotion />],
+    },
+    {
+      title: "5. Emotion + 반응형",
+      contents: [<EmotionPractice />],
     },
   ];
 
@@ -35,7 +50,7 @@ function Index() {
           borderRadius: "6px",
         }}
       >
-        === 리액트 HTTP 통신 ===
+        === 리액트 스타일(Style) ===
       </h1>
 
       <div style={{ marginTop: "12px" }}>

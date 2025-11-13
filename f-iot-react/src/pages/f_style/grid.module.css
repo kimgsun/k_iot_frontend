@@ -1,0 +1,39 @@
+.dashboard {
+  padding: var(--space-lg);
+  background-color: var(--color-bg);
+}
+
+.status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.card {
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px;
+  gap: 16px;
+}
+
+.gridLayout div {
+  background-color: #000;
+  color: #fff;
+}
+
+.item1 {
+  grid-column: span 1;
+}
+
+.item2 {
+  grid-column: span 2;
+}
